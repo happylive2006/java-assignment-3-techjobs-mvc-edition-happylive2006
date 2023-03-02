@@ -11,6 +11,39 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
+    <table class="job-listing" th:each="Job:${jobs}">
+<!--        class="job-listing connect with techjobs.css table.job-listing-->
+<!--        th:each="variableName:${collectionName}"-->
+<!--        variableName represents an individual item or element within the collection.-->
+<!--        collectionName represents an ArrayList, HashMap or other collection.-->
+       <tr>
+           <td>ID</td>
+           <td th:text="${Job.id}"></td>
+       </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text="${Job.name}"></td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="${Job.employer.value}"></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td th:text="${Job.location.value}"></td>
+        </tr>
+        <tr>
+            <td>Position Type</td>
+            <td th:text="${Job.positionType.value}"></td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="${Job.coreCompetency.value}"></td>
+        </tr>
+
+
+    </table>
+
 
 </div>
 
